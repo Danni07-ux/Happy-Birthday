@@ -348,6 +348,15 @@ section:not(.hero) {
     color: var(--grey);
     margin-top: 5px;
 }
+/* MEMORY PHOTOS */
+.memory-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    display: block;
+    margin: 10px auto;
+    object-fit: cover;
+}
 /* MEMORIES */
 .level-intro {
     color: var(--grey);

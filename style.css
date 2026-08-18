@@ -373,7 +373,7 @@ section:not(.hero) {
     border: 1px solid rgba(139, 92, 246, 0.25);
 }
 .photo-placeholder.small {
-    min-height: 250px;
+    min-height: 150px;
     margin: 0;
 }
 .memory-card p {

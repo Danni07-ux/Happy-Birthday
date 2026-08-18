@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ — Level 19 Unlocked 🎮</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- BACKGROUND PARTICLES -->
+    <div class="particles"></div>
+    <!-- LOADING SCREEN -->
+    <section id="loading-screen">
+        <div class="terminal">
+            <p>> INITIALIZING BIRTHDAY.exe</p>
+            <p>> PLAYER DETECTED...</p>
+            <p class="purple">> PLAYER: AJ</p>
+            <p>> CURRENT LEVEL: 18</p>
+            <p>> NEW LEVEL AVAILABLE: <span class="pink">19</span></p>
+            <div class="loading-bar">
+                <div id="loading-progress"></div>
+            </div>
+            <p id="loading-text">Loading birthday quest...</p>
+        </div>
+    </section>
+    <!-- MAIN INVITATION -->
+    <main id="main-content">
+        <section class="hero">
+            <div class="small-label">
+                BIRTHDAY QUEST.exe
+            </div>
+            <h1>
+                LEVEL <span>19</span><br>
+                UNLOCKED
+            </h1>
+            <p class="player-name">
+                PLAYER: <strong>AJ</strong>
+            </p>
+            <p class="hero-description">
+                A special quest has been created specifically for you.
+            </p>
+            <button class="start-button" onclick="startQuest()">
+                ▶️ PRESS START
+            </button>
+            <p class="scroll-hint">
+                Your next level begins here...
+            </p>
+        </section>
+        <!-- QUEST MENU -->
+        <section id="quest-menu" class="hidden">
+            <div class="section-title">
+                <span>QUEST MENU</span>
+                <div class="line"></div>
+            </div>
+            <p class="intro">
+                Welcome, player.<br>
+                Your mission is simple:
+                <strong>experience the story of us.</strong>
+            </p>
+            <div class="quest-grid">
+                <button onclick="openLevel('beginning')">
+                    <span class="quest-number">01</span>
+                    <span class="quest-icon">📍</span>
+                    <span class="quest-title">THE BEGINNING</span>
+                    <span class="quest-status">UNLOCK</span>
+                </button>
+                <button onclick="openLevel('memories')">
+                    <span class="quest-number">02</span>
+                    <span class="quest-icon">📸</span>
+                    <span class="quest-title">MEMORIES</span>
+                    <span class="quest-status">UNLOCK</span>
+                </button>
+                <button onclick="openLevel('achievements')">
+                    <span class="quest-number">03</span>
+                    <span class="quest-icon">🏆</span>
+                    <span class="quest-title">ACHIEVEMENTS</span>
+                    <span class="quest-status">UNLOCK</span>
+                </button>
+                <button onclick="openLevel('final')">
+                    <span class="quest-number">04</span>
+                    <span class="quest-icon">❤️</span>
+                    <span class="quest-title">FINAL LEVEL</span>
+                    <span class="quest-status">UNLOCK</span>
+                </button>
+            </div>
+            <div class="xp-container">
+                <div class="xp-header">
+                    <span>QUEST PROGRESS</span>
+                    <span id="xp-text">0 / 100 XP</span>
+                </div>
+                <div class="xp-bar">
+                    <div id="xp-progress"></div>
+                </div>
+            </div>
+        </section>
+        <!-- LEVEL 01 -->
+        <section id="beginning" class="level hidden">
+            <button class="back-button" onclick="backToMenu()">← BACK TO QUEST MENU</button>
+            <div class="level-header">
+                <span>LEVEL 01</span>
+                <h2>THE BEGINNING</h2>
+            </div>
+            <div class="story-card">
+                <div class="location">
+                    📍 STELLENBOSCH, SOUTH AFRICA
+                </div>
+                <h3>
+                    Where our story started.
+                </h3>
+                <p>
+                    My first date ever.
+                </p>
+                <p>
+                    We walked around Stellenbosch, explored the university,
+                    looked around everywhere and eventually went to a restaurant
+                    together.
+                </p>
+                <p>
+                    At the time, I don't think I could have known how important
+                    that day would become.
+                </p>
+                <p class="highlight">
+                    But that was the beginning of us. ❤️
+                </p>
+                <!-- ADD YOUR FIRST DATE PHOTO HERE -->
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <p>YOUR FIRST DATE PHOTO</p>
+                    <small>Replace this with your photo later</small>
+                </div>
+            </div>
+            <button class="complete-button" onclick="completeLevel('beginning')">
+                ✓ COMPLETE LEVEL
+            </button>
+        </section>
+        <!-- LEVEL 02 -->
+        <section id="memories" class="level hidden">
+            <button class="back-button" onclick="backToMenu()">← BACK TO QUEST MENU</button>
+            <div class="level-header">
+                <span>LEVEL 02</span>
+                <h2>MEMORIES</h2>
+            </div>
+            <p class="level-intro">
+                Every relationship is made from little moments.
+                These are some of mine.
+            </p>
+            <div class="memory-grid">
+                <!-- Replace these with your photos -->
+                <div class="memory-card">
+                    <div class="photo-placeholder small">
+                        📸
+                    </div>
+                    <p>OUR MEMORY #01</p>
+                </div>
+                <div class="memory-card">
+                    <div class="photo-placeholder small">
+                        📸
+                    </div>
+                    <p>OUR MEMORY #02</p>
+                </div>
+                <div class="memory-card">
+                    <div class="photo-placeholder small">
+                        📸
+                    </div>
+                    <p>OUR MEMORY #03</p>
+                </div>
+                <div class="memory-card">
+                    <div class="photo-placeholder small">
+                        📸
+                    </div>
+                    <p>OUR MEMORY #04</p>
+                </div>
+            </div>
+            <button class="complete-button" onclick="completeLevel('memories')">
+                ✓ COMPLETE LEVEL
+            </button>
+        </section>
+        <!-- LEVEL 03 -->
+        <section id="achievements" class="level hidden">
+            <button class="back-button" onclick="backToMenu()">← BACK TO QUEST MENU</button>
+            <div class="level-header">
+                <span>LEVEL 03</span>
+                <h2>ACHIEVEMENTS</h2>
+            </div>
+            <p class="level-intro">
+                Achievements earned by AJ during his time in my life.
+            </p>
+            <div class="achievement-list">
+                <div class="achievement">
+                    <div class="achievement-icon">😊</div>
+                    <div>
+                        <h3>THE SMILE</h3>
+                        <p>
+                            For making me smile even when I don't feel like smiling.
+                        </p>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">👀</div>
+                    <div>
+                        <h3>THOSE EYES</h3>
+                        <p>
+                            For having eyes I could probably stare into forever.
+                        </p>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">🤍</div>
+                    <div>
+                        <h3>HOME</h3>
+                        <p>
+                            For the feeling I get when you hold me,
+                            especially after we haven't seen each other for months.
+                        </p>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">🫶</div>
+                    <div>
+                        <h3>ALWAYS THERE</h3>
+                        <p>
+                            For being there for me when I need you.
+                        </p>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">⬆️</div>
+                    <div>
+                        <h3>LEVELING UP</h3>
+                        <p>
+                            For trying to become a better person and a better
+                            partner for us every day.
+                        </p>
+                    </div>
+                </div>
+                <div class="achievement special">
+                    <div class="achievement-icon">❤️</div>
+                    <div>
+                        <h3>MY FAVOURITE PERSON</h3>
+                        <p>
+                            For simply being you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="complete-button" onclick="completeLevel('achievements')">
+                ✓ COMPLETE LEVEL
+            </button>
+        </section>
+        <!-- FINAL LEVEL -->
+        <section id="final" class="level final-level hidden">
+            <button class="back-button" onclick="backToMenu()">← BACK TO QUEST MENU</button>
+            <div class="final-content">
+                <div class="final-badge">
+                    FINAL LEVEL
+                </div>
+                <h2>
+                    HAPPY<br>
+                    <span>19TH BIRTHDAY</span>
+                </h2>
+                <p class="typing-text" id="birthday-message"></p>
+                <button class="surprise-button" onclick="revealSurprise()">
+                    🎁 OPEN YOUR SURPRISE
+                </button>
+                <div id="surprise" class="surprise hidden">
+                    <div class="heart">♥️</div>
+                    <h3>
+                        QUEST COMPLETE
+                    </h3>
+                    <p>
+                        If I could choose my favourite person
+                        in every universe, every game and every timeline...
+                    </p>
+                    <p class="big-love">
+                        I'd still choose you.
+                    </p>
+                    <p>
+                        Happy 19th birthday, AJ. ❤️
+                    </p>
+                    <div class="final-stars">
+                        ✦ ✦ ✦
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer>
+            <p>
+                PLAYER: AJ ♡ PLAYER 2: DANNI-LEIGH
+            </p>
+            <p>
+                GAME STATUS: <span>FOREVER</span>
+            </p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

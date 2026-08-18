@@ -161,8 +161,8 @@ function createConfetti() {
                     opacity: 1
                 },
                 {
-                    transform:
-                        translateY(110vh) rotate(${Math.random() * 720}deg),
+               
+                        transform: `translateY(110vh) rotate(${Math.random() * 720}deg)`,
                     opacity: 0
                 }
             ],

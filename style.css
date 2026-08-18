@@ -1,0 +1,572 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --black: #050507;
+    --dark-purple: #12091f;
+    --purple: #8b5cf6;
+    --bright-purple: #a855f7;
+    --pink: #f7a8d8;
+    --mint: #a7f3d0;
+    --white: #f8f7ff;
+    --grey: #a5a1b5;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(247, 168, 216, 0.08), transparent 30%),
+        var(--black);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/* PARTICLES */
+.particles::before,
+.particles::after {
+    content: "";
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: var(--purple);
+    border-radius: 50%;
+    box-shadow:
+        10vw 20vh var(--purple),
+        25vw 70vh var(--pink),
+        40vw 30vh var(--mint),
+        60vw 80vh var(--purple),
+        80vw 25vh var(--pink),
+        90vw 65vh var(--mint),
+        15vw 90vh var(--purple),
+        70vw 10vh var(--pink);
+    opacity: 0.5;
+    animation: float 8s infinite alternate;
+}
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-30px);
+    }
+}
+/* LOADING SCREEN */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #030305;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+.terminal {
+    width: min(90%, 600px);
+    font-family: "Orbitron", sans-serif;
+    color: var(--mint);
+    line-height: 2;
+    font-size: 13px;
+}
+.terminal .purple {
+    color: var(--purple);
+}
+.terminal .pink {
+    color: var(--pink);
+}
+.loading-bar {
+    height: 8px;
+    border: 1px solid var(--purple);
+    margin: 25px 0;
+    padding: 2px;
+}
+#loading-progress {
+    width: 0%;
+    height: 100%;
+    background: var(--purple);
+    box-shadow: 0 0 15px var(--purple);
+    transition: width 0.15s linear;
+}
+/* MAIN */
+#main-content {
+    display: none;
+}
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+.small-label {
+    font-family: "Orbitron", sans-serif;
+    color: var(--mint);
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+.hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(50px, 12vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    text-shadow:
+        0 0 15px rgba(139, 92, 246, 0.7),
+        0 0 40px rgba(139, 92, 246, 0.3);
+}
+.hero h1 span {
+    color: var(--purple);
+}
+.player-name {
+    margin-top: 30px;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 4px;
+}
+.player-name strong {
+    color: var(--pink);
+}
+.hero-description {
+    color: var(--grey);
+    margin-top: 15px;
+    max-width: 450px;
+}
+.start-button {
+    margin-top: 40px;
+    padding: 18px 35px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--purple);
+    font-family: "Orbitron", sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+.start-button:hover {
+    background: var(--purple);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+    transform: translateY(-3px);
+}
+.scroll-hint {
+    position: absolute;
+    bottom: 25px;
+    color: #686477;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+/* GENERAL SECTIONS */
+section:not(.hero) {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 90px 0;
+}
+.hidden {
+    display: none !important;
+}
+.section-title {
+    font-family: "Orbitron", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--purple);
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+.line {
+    height: 1px;
+    background: rgba(139, 92, 246, 0.3);
+    flex: 1;
+}
+.intro {
+    text-align: center;
+    color: var(--grey);
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+.intro strong {
+    color: var(--pink);
+}
+/* QUEST GRID */
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+.quest-grid button {
+    background: rgba(18, 9, 31, 0.7);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: var(--white);
+    padding: 25px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    display: grid;
+    grid-template-columns: 45px 45px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+.quest-grid button:hover {
+    border-color: var(--purple);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px rgba(139, 92, 246, 0.15);
+}
+.quest-number {
+    color: var(--grey);
+    font-family: "Orbitron", sans-serif;
+}
+.quest-icon {
+    font-size: 24px;
+}
+.quest-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+}
+.quest-status {
+    grid-column: 3;
+    color: var(--mint);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+/* XP */
+.xp-container {
+    margin-top: 50px;
+}
+.xp-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    color: var(--grey);
+    margin-bottom: 8px;
+}
+.xp-bar {
+    height: 8px;
+    background: #17131e;
+    border: 1px solid #292033;
+}
+#xp-progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--pink),
+        var(--mint)
+    );
+    transition: width 1s ease;
+}
+/* LEVELS */
+.level {
+    min-height: 100vh;
+}
+.back-button {
+    background: none;
+    border: none;
+    color: var(--grey);
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+.back-button:hover {
+    color: var(--pink);
+}
+.level-header span {
+    color: var(--mint);
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+.level-header h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(35px, 8vw, 65px);
+    margin-top: 10px;
+    color: var(--purple);
+}
+/* STORY */
+.story-card {
+    max-width: 750px;
+    margin: 50px auto;
+    background: rgba(18, 9, 31, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    padding: 40px;
+    line-height: 1.9;
+}
+.location {
+    color: var(--mint);
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.story-card h3 {
+    font-family: "Orbitron", sans-serif;
+    color: var(--pink);
+    margin-bottom: 20px;
+}
+.story-card p {
+    color: var(--grey);
+    margin-bottom: 18px;
+}
+.story-card .highlight {
+    color: var(--white);
+    font-size: 18px;
+    margin-top: 30px;
+}
+/* PHOTO PLACEHOLDER */
+.photo-placeholder {
+    margin-top: 35px;
+    min-height: 250px;
+    border: 1px dashed rgba(247, 168, 216, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink);
+    background: rgba(247, 168, 216, 0.03);
+    text-align: center;
+}
+.photo-placeholder span {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.photo-placeholder p {
+    font-family: "Orbitron", sans-serif;
+    color: var(--pink);
+    margin: 0;
+}
+.photo-placeholder small {
+    color: var(--grey);
+    margin-top: 5px;
+}
+/* MEMORIES */
+.level-intro {
+    color: var(--grey);
+    margin: 20px 0 40px;
+}
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.memory-card {
+    background: rgba(18, 9, 31, 0.5);
+    padding: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+.photo-placeholder.small {
+    min-height: 250px;
+    margin: 0;
+}
+.memory-card p {
+    font-family: "Orbitron", sans-serif;
+    color: var(--pink);
+    font-size: 10px;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+/* ACHIEVEMENTS */
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+.achievement {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 25px;
+    background: rgba(18, 9, 31, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    transition: 0.3s;
+}
+.achievement:hover {
+    border-color: var(--pink);
+    transform: translateX(5px);
+}
+.achievement-icon {
+    font-size: 32px;
+    min-width: 50px;
+    text-align: center;
+}
+.achievement h3 {
+    font-family: "Orbitron", sans-serif;
+    color: var(--purple);
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+.achievement p {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.achievement.special {
+    border-color: rgba(247, 168, 216, 0.5);
+}
+/* COMPLETE BUTTON */
+.complete-button {
+    display: block;
+    margin: 50px auto 0;
+    padding: 16px 30px;
+    background: transparent;
+    color: var(--mint);
+    border: 1px solid var(--mint);
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    transition: 0.3s;
+}
+.complete-button:hover {
+    background: var(--mint);
+    color: var(--black);
+    box-shadow: 0 0 25px rgba(167, 243, 208, 0.4);
+}
+/* FINAL */
+.final-level {
+    text-align: center;
+}
+.final-content {
+    max-width: 750px;
+    margin: auto;
+}
+.final-badge {
+    display: inline-block;
+    color: var(--mint);
+    border: 1px solid var(--mint);
+    padding: 8px 15px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.final-content h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(45px, 10vw, 85px);
+    line-height: 1;
+    margin-bottom: 45px;
+}
+.final-content h2 span {
+    color: var(--purple);
+    text-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+}
+.typing-text {
+    color: var(--grey);
+    line-height: 2;
+    min-height: 130px;
+    font-size: 16px;
+}
+.surprise-button {
+    margin-top: 35px;
+    padding: 18px 30px;
+    background: var(--purple);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    transition: 0.3s;
+}
+.surprise-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+}
+.surprise {
+    margin-top: 50px;
+    padding: 45px 25px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139, 92, 246, 0.18),
+            transparent 65%
+        );
+    animation: appear 1s ease;
+}
+.heart {
+    font-size: 60px;
+    color: var(--pink);
+    text-shadow: 0 0 25px var(--pink);
+    animation: heartbeat 1.3s infinite;
+}
+.surprise h3 {
+    font-family: "Orbitron", sans-serif;
+    color: var(--mint);
+    margin: 20px 0;
+}
+.surprise p {
+    color: var(--grey);
+    line-height: 1.8;
+    margin: 10px auto;
+    max-width: 550px;
+}
+.surprise .big-love {
+    color: var(--pink);
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+}
+.final-stars {
+    color: var(--purple);
+    margin-top: 25px;
+    letter-spacing: 10px;
+}
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+    color: #625d70;
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+footer span {
+    color: var(--pink);
+}
+/* ANIMATIONS */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* MOBILE */
+@media (max-width: 650px) {
+    .quest-grid {
+        grid-template-columns: 1fr;
+    }
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+    .story-card {
+        padding: 25px;
+    }
+    .achievement {
+        align-items: flex-start;
+    }
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+    section:not(.hero) {
+        padding: 60px 0;
+    }
+}

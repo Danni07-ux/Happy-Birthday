@@ -350,18 +350,17 @@ section:not(.hero) {
 }
 /* MEMORY PHOTOS */
 .memory-card img {
-    width: 100%;
-    max-width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 15px;
     display: block;
     margin: 10px auto;
 }
 .memory-photo {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 15px;
     display: block;
     margin: 10px auto;

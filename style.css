@@ -325,7 +325,7 @@ section:not(.hero) {
 /* PHOTO PLACEHOLDER */
 .photo-placeholder {
     margin-top: 35px;
-    min-height: 250px;
+    min-height: 150px;
     border: 1px dashed rgba(247, 168, 216, 0.4);
     display: flex;
     flex-direction: column;

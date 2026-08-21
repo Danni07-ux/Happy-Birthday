@@ -349,7 +349,7 @@ section:not(.hero) {
     margin-top: 5px;
 }
 /* MEMORY PHOTOS */
-.memory-photo {
+.level hidden {
     width: 100%;
     max-width: 150px;
     height: auto;

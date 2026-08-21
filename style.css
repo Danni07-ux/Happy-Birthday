@@ -351,12 +351,11 @@ section:not(.hero) {
 /* MEMORY PHOTOS */
 .memory-photo {
     width: 100%;
-    height: 250px;
+    max-width: 250px;
+    height: auto;
     border-radius: 15px;
     display: block;
     margin: 10px auto;
-    object-fit: cover;
-
 }
 /* MEMORIES */
 .level-intro {

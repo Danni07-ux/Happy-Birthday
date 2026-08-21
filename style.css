@@ -351,7 +351,7 @@ section:not(.hero) {
 /* MEMORY PHOTOS */
 .memory-photo {
     width: 100%;
-    max-width: 250px;
+    max-width: 150px;
     height: auto;
     border-radius: 15px;
     display: block;

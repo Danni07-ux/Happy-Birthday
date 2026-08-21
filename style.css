@@ -349,9 +349,18 @@ section:not(.hero) {
     margin-top: 5px;
 }
 /* MEMORY PHOTOS */
-.level hidden {
+.memory-card img {
     width: 100%;
-    max-width: 150px;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: 10px auto;
+}
+.memory-photo {
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 15px;
     display: block;
